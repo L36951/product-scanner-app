@@ -1,5 +1,6 @@
 {
   "expo": {
+    "jsEngine": "hermes",
     "name": "ProductDescriptionApp",
     "slug": "ProductDescriptionApp",
     "version": "1.0.0",
@@ -12,17 +13,39 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "需要相機權限以拍攝商品照片",
+        "NSPhotoLibraryUsageDescription": "需要相簿權限以選擇商品照片"
+      },
+      "bundleIdentifier": "com.laisiukei.productdescriptionapp"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": [
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE"
+      ],
+      "package": "com.laisiukei.productdescriptionapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "ff352532-11b4-4228-a369-3e35cb270593"
+      }
     }
   }
 }
